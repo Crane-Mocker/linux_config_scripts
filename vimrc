@@ -121,10 +121,37 @@ Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'joker1007/vim-markdown-quote-syntax' "md代码块高亮
 
-"配色方案"
-set t_Co=256 "不知道为啥，反正缺了就报错
+
+""""""""""""""""""""""
+"美化
+
+"set t_Co=256 "不知道为啥，反正缺了就报错
 "colorscheme railscasts
-colorscheme seoul256
+"colorscheme seoul256
+
+"vim airline theme
+let g:airline_theme='one'
+
+"vim-one
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+colorscheme one
+set background=dark " for the dark version
+" set background=light " for the light version
+
+
+""""""""""""""""""""""""
+
 
 " 非 github 仓库的插件"
 " Plugin 'git://git.wincent.com/command-t.git'
